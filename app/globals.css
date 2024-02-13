@@ -13,11 +13,12 @@
 
   --background-color: #282c34;
   --purple-color: #7d54fa;
-  --purple-color-deep:#2a1d45;
+  --purple-color-deep:#5d4b81;
 }
 
 body {
   background: radial-gradient(var(--background-color), var(--background-color));
   width: 100vw;
   height: 100vh;
+  padding: 1rem;
 }
