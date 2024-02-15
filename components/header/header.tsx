@@ -1,21 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import imageSource from "@/assets/logo.png";
+import classes from "./header.module.css";
 
 const Header = function () {
+  
   return (
-    <header>
-      <li>
-        <Link href="/">
-          <Image
-            src={imageSource.src}
-            alt={"food community logo"}
-            width={imageSource.width}
-            height={imageSource.height}
-          ></Image>
-          Food Reservation
-        </Link>
-      </li>
+    <header className={classes.headerContainer}>
+      <Link href="/" className={classes.logoContainer}>
+        <Image
+          src={imageSource.src}
+          alt={"food community logo"}
+          width={imageSource.width}
+          height={imageSource.height}
+        ></Image>
+        Food Reservation
+      </Link>
       <nav>
         <ul>
           <li>

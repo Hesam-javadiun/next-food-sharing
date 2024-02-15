@@ -1,0 +1,62 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContainer a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 1rem rgb(43, 43, 43);
+  font-weight: bold;
+}
+
+.headerContainer a:active,
+.headerContainer a:hover {
+  background: linear-gradient(var(--purple-color-light), var(--purple-color-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active {
+    background: linear-gradient(var(--purple-color-light), var(--purple-color-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 1rem var(--purple-color-light);
+}
+
+.headerContainer nav {
+  flex: 1 1 0;
+}
+
+.headerContainer nav a {
+  font-size: 1.3rem;
+}
+
+.headerContainer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1 1 0;
+  font-size: 1.8rem;
+  font-variant: all-small-caps;
+  letter-spacing: 0.2rem;
+}
+
+.logoContainer img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1rem rgb(43, 43, 43));
+}

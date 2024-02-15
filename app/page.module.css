@@ -1,4 +1,90 @@
-.title {
-    color: white;
-    text-align: center;
+.headerContainer {
+  display: flex;
+  gap: 2rem;
+  padding-top: 4rem;
+}
+
+.slider {
+  height: 25rem;
+  flex: 1 1 0;
+}
+
+.topRightSection {
+  flex: 1 1 10%;
+}
+
+.titleContainer h1 {
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--purple-color),
+    var(--purple-color-light)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: "Montserrat", sans-serif;
+  white-space: pre-wrap;
+  font-variant: all-small-caps;
+  font-size: 2.5rem;
+}
+
+.titleContainer p {
+  padding: 1rem;
+}
+
+.titleContainer p {
+  font-size: 1.5rem;
+}
+
+.titleContainer p {
+  color: var(--white-text-color);
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.communityLink {
+  background: linear-gradient(var(--purple-color), var(--purple-color-deep));
+  background-clip: text;
+  color: transparent;
+  --webkit-background-clip: text;
+  --webkit-fill-text-color: transparent;
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.mealsLink {
+  color: var(--white-text-color);
+  background: linear-gradient(90deg, var(--purple-color), var(--purple-color));
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section h2,
+.section p {
+  text-align: center;
+  color: var(--white-text-color);
+}
+
+.section h2 {
+  font-size: 2.5rem;
+}
+
+.section p {
+  font-size: 1.5rem;
 }

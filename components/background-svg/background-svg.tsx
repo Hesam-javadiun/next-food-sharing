@@ -6,7 +6,7 @@ const BackgroundSvg = function () {
       <svg className={classes.svg} viewBox="0 0 35 20">
         <path
           fill="#5d4b81"
-          d="M 0 0 S 23.3333 0 35 0 L 35 4 Q 29 5 24 3 Q 18 1 21 4 C 24 7 24 9 22 8 C 20 7 17 5 9 5 C 2 5 2 2 0 4"
+          d="M 0 0 S 23.3333 0 35 0 L 35 4 Q 26 1 15 5 Q 4 9 9 6 Q 16 2 0 3"
         ></path>
       </svg>
     </div>

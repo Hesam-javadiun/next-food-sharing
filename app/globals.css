@@ -12,13 +12,19 @@
   font-family: 'Quicksand', sans-serif;
 
   --background-color: #282c34;
+  --purple-color-light: #dd78f4;
   --purple-color: #7d54fa;
   --purple-color-deep:#5d4b81;
+  --purple-color-deeper:rgb(181, 0, 252);
+
+  --white-text-color: #ddd6cb;
 }
 
 body {
   background: radial-gradient(var(--background-color), var(--background-color));
-  width: 100vw;
-  height: 100vh;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  overflow-y: auto;
 }
