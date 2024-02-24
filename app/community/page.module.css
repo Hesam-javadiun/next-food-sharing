@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-text-color);
+  /* gap: 2rem; */
+}
+
+.container * {
+    margin: 1rem;
+}
+
+.container h1 {
+  font-size: 3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container p {
+    font-size: 1.5rem;
+}
+
+.container h2 {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.container span {
+    background: linear-gradient(
+      90deg,
+      var(--purple-color),
+      var(--purple-color-light)
+    );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+/* 
+color
+font-size
+font-weight
+text-align
+letter spacing
+font variant
+
+
+*/

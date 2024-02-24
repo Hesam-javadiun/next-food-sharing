@@ -13,6 +13,7 @@ const Header = function () {
           alt={"food community logo"}
           width={imageSource.width}
           height={imageSource.height}
+          priority
         ></Image>
         Food Reservation
       </Link>

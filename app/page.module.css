@@ -7,6 +7,9 @@
 .slider {
   height: 25rem;
   flex: 1 1 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
 }
 
 .topRightSection {
@@ -32,13 +35,7 @@
 
 .titleContainer p {
   padding: 1rem;
-}
-
-.titleContainer p {
   font-size: 1.5rem;
-}
-
-.titleContainer p {
   color: var(--white-text-color);
 }
 
@@ -73,6 +70,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 50rem;
+  margin:auto;
 }
 
 .section h2,
