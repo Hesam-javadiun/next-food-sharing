@@ -1,12 +1,15 @@
-import CommunityContent from "@/components/community-content";
-import classes from './page.module.css'
 import communityPerkImage from "@/assets/icons/meal.png";
+import ColoredText from "@/components/UI/colored-text";
+import CommunityContent from "@/components/community-content";
+import classes from './page.module.css';
+
+
 
 const CommunityPage = function () {
   return (
     <main className={classes.container}>
       <h1>
-        One shared passion: <span>Food</span>
+        One shared passion: <ColoredText>Food</ColoredText>
       </h1>
       <p>Join our community and share your favorite recipes!</p>
       <h2>Community Perks</h2>

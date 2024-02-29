@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap:0.5rem;
+  justify-content: space-between;
+  background: linear-gradient(90deg ,rgb(25, 0, 37), rgb(40, 40, 40));
+}
+
+.imageContainer {
+  flex: 0 0 53%;
+  position: relative;
+}
+
+.imageContainer img {
+    object-fit: cover;
+}
+
+.summary {
+  flex: 1 1 17%;
+}
+
+.card h2 {
+  font-family: "Montserrat", sans-serif;
+  font-family: 1.25rem;
+  margin-left: 1rem;
+  flex: 1 1 0;
+
+}
+
+.card p {
+  font-size: 1rem;
+  margin-left:1rem;
+  flex: 1 1 0;
+  overflow: hidden;
+}
+
+.card small {
+  font-size: 0.75rem;
+}
+
+.card a {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}

@@ -1,0 +1,13 @@
+.textFilled{
+    background: linear-gradient(var(--purple-color), var(--purple-color-deep));
+    background-clip: text;
+    color: transparent;
+    --webkit-background-clip: text;
+    --webkit-fill-text-color: transparent;
+}
+
+.bgFilled{
+    color: var(--white-text-color);
+    background: linear-gradient(90deg, var(--purple-color), var(--purple-color-light));
+    border-radius: 0.4rem;
+}

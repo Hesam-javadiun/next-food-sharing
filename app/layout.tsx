@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import BackgroundSvg from "@/components/background-svg";
+import BackgroundSvg from "@/components/UI/background-svg";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {

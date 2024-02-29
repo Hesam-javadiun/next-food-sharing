@@ -6,25 +6,26 @@
 
 .headerContainer a {
   text-decoration: none;
-  color: white;
+  /* color: var(--white-text-color); */
   text-shadow: 0 0 1rem rgb(43, 43, 43);
+  background:linear-gradient(var(--white-text-color), var(--white-text-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
 
 .headerContainer a:active,
-.headerContainer a:hover {
-  background: linear-gradient(var(--purple-color-light), var(--purple-color-light));
+.headerContainer a:hover, 
+.active {
+  background: linear-gradient(
+    var(--purple-color-light),
+    var(--purple-color-light)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.active {
-    background: linear-gradient(var(--purple-color-light), var(--purple-color-light));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 1rem var(--purple-color-light);
+  text-shadow: 0 0 1rem var(--purple-color-light);
 }
 
 .headerContainer nav {

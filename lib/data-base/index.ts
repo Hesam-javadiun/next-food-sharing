@@ -1,0 +1,1 @@
+export { getMeals, type MealData } from "./get-meals";
