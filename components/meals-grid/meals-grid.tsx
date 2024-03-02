@@ -19,17 +19,3 @@ const MealsGrid = function ({ meals }: MealsGridProps) {
 };
 
 export default MealsGrid;
-
-//Partial
-//Required
-//Pick
-//Record
-//ReturnType
-//Readonly
-//NoneNullable
-//Omit
-//Exclude
-//Extract
-//InstanceType
-
-

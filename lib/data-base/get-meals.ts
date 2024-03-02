@@ -15,7 +15,9 @@ export type MealData = {
 
 
 export async function getMeals():Promise<MealData[]> {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 4000));
+
+  // throw new Error('something happened!')
   return db.prepare("SELECT * FROM meals").all() as MealData[];
 }
 

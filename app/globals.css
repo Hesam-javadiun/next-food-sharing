@@ -34,11 +34,15 @@ h1 {
 }
 
 h2 {
-  /* font-size: 2rem; */
+  font-size: 2rem;
   color: var(--white-text-color);
 }
 
 p {
-  /* font-size: 1.5rem; */
+  font-size: 1.5rem;
   color: var(--white-text-color);
+}
+a {
+  text-decoration: none;
+  font-weight: bolder;
 }

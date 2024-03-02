@@ -1,0 +1,22 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading p {
+  text-align: center;
+  animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    color: var(--white-text-color);
+  }
+  50% {
+    color: var(--purple-color);
+  }
+  100% {
+    color: var(--white-text-color);
+  }
+}

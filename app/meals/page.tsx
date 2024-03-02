@@ -2,9 +2,15 @@ import { getMeals } from "@/lib/data-base";
 import { Link, PurpleText } from "@/components/UI";
 import classes from "./page.module.css";
 import MealsGrid from "@/components/meals-grid";
+import { Suspense } from "react";
+import LoadingMeals from './loading-meals'
 
-const MealsPage = async function () {
+const Meals = async function () {
   const meals = await getMeals();
+
+  return <MealsGrid meals={meals} />;
+};
+const MealsPage = function () {
 
   return (
     <>
@@ -21,7 +27,9 @@ const MealsPage = async function () {
           </Link>
         </p>
       </header>
-      <MealsGrid meals={meals} />
+      <Suspense fallback={<LoadingMeals />}>
+        <Meals />
+      </Suspense>
     </>
   );
 };
