@@ -13,7 +13,7 @@ Food Sharing is an application that help its users to share their desired meals 
 ## 1. Purposes
 
 Food Sharing Application is sample next ***practical project*** for learning  server side rendering and a berif introduction to how my code should look like, before reading the code considering this notes
-* it's pages on the ***development*** phases
+* its pages is on the ***development*** phases
 * it's practical project based on the next  framework 
 * dummy data base configured  
 * some naive server storing images approaches used 

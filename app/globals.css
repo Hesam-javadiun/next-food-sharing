@@ -16,6 +16,7 @@
   --purple-color: #7d54fa;
   --purple-color-deep:#5d4b81;
   --purple-color-deeper:rgb(181, 0, 252);
+  --purple-color-light-and-dark:rgb(100, 93, 106);
 
   --white-text-color: #ddd6cb;
 }
@@ -42,6 +43,7 @@ p {
   font-size: 1.5rem;
   color: var(--white-text-color);
 }
+
 a {
   text-decoration: none;
   font-weight: bolder;

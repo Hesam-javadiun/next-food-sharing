@@ -1,8 +1,37 @@
-const MealDetailsPage = function ({ params } : any) {
+import { PurpleText } from "@/components/UI";
+import classes from "./page.module.css";
+
+import { type MealData, getMeal } from "@/lib/data-base";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+
+const hasNotFoundMeal = (meal: unknown) => {
+  return !Boolean(meal);
+};
+
+const MealDetailsPage = function ({ params }: any) {
+  const meal = getMeal(params.slug) as MealData;
+
+  if (hasNotFoundMeal(meal)) {
+    notFound();
+  }
+  meal.instructions = meal.instructions.replace(/\n/g, '<br />');
   return (
-    <main>
-      <h1>Meals Details Page Component for {params.slug} meal</h1>
-    </main>
+    <>
+      <header className={classes.header}>
+        <div className={classes.imageContainer}> <Image src={meal.image} alt={`${meal.title} image`} fill></Image></div>
+        <div className={classes.leftBox}>
+          <h1>{meal.title}</h1>
+          <p>
+            by <PurpleText>{meal.creator}</PurpleText>
+          </p>
+          <p>{meal.summary}</p>
+        </div>
+      </header>
+      <main className={classes.content}>
+        <p dangerouslySetInnerHTML={{__html: meal.instructions}}></p>
+      </main>
+    </>
   );
 };
 
