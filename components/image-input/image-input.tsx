@@ -1,21 +1,41 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect,useRef, useState } from "react";
 
 import classes from "./image-input.module.css";
 
+const EmptyBox = () => (
+  <div className={classes["empty-box"]}>
+    <span>No Image</span>
+    <span>picked yet.</span>
+  </div>
+);
+
 type ImageInputProps = Omit<
   React.HTMLAttributes<HTMLInputElement>,
-  "type" | "accept" | "onChange" | "id" | "value"
+  "type" | "accept" | "onChange"
 > & {
   name?: string;
+  labelText?: string;
 };
 
 const ImageInput = function (props: ImageInputProps) {
-  const [imageFile, setImageFile] = useState("");
+  const [imageFile, setImageFile] = useState<unknown>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = useCallback((event: any) => {
-    event.currentTarget?.value && setImageFile(event.currentTarget.value);
+    const imageFile = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const imageSrc = event.target?.result;
+      setImageFile(imageSrc!);
+    };
+    reader.readAsDataURL(imageFile);
+  }, []);
+
+  const buttonClickHandler = useCallback(() => {
+    inputRef.current?.click()
   }, []);
 
   const adjustedProps = {
@@ -23,32 +43,28 @@ const ImageInput = function (props: ImageInputProps) {
     className: `${props.className} ${classes["image-input"]}`,
   };
 
-  useEffect(() => {
-    console.log(`image html ref value`, imageFile);
-  }, [imageFile]);
-
   return (
-    <div className={classes.container}>
-      <div className={classes.box}>
-        {imageFile ? (
-          <img src={imageFile} alt={"picked image!"} width={'auto'} height={'auto'}></img>
-        ) : (
-          <div className={classes["empty-box"]}>
-            <span>No Image</span>
-            <span> picked yet.</span>
-          </div>
-        )}
-        <input
-          type="file"
-          id="file"
-          accept="image/png, image/jpeg"
-          onChange={onChangeHandler}
-          value={imageFile}
-          {...adjustedProps}
-        />
+    <>
+      {props.labelText && <label htmlFor={props.id}>Your Image</label>}
+      <div className={classes["flex-container"]}>
+        <div className={classes.box}>
+          {imageFile ? (
+            <Image src={imageFile as string} alt={"picked image!"} fill></Image>
+          ) : (
+            <EmptyBox />
+          )}
+          <input
+            type="file"
+            ref={inputRef}
+            id={props.id}
+            accept="image/png, image/jpeg"
+            onChange={onChangeHandler}
+            {...adjustedProps}
+          />
+        </div>
+        <button onClick={buttonClickHandler}>Pick an image</button>
       </div>
-      <label htmlFor="file" className={classes.container}>Pick an image</label>
-    </div>
+    </>
   );
 };
 
