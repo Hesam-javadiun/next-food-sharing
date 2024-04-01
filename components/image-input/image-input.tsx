@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useEffect,useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import classes from "./image-input.module.css";
 
@@ -35,17 +35,18 @@ const ImageInput = function (props: ImageInputProps) {
   }, []);
 
   const buttonClickHandler = useCallback(() => {
-    inputRef.current?.click()
+    inputRef.current?.click();
   }, []);
 
   const adjustedProps = {
     ...props,
     className: `${props.className} ${classes["image-input"]}`,
   };
-
+  delete adjustedProps.labelText;
+  
   return (
     <>
-      {props.labelText && <label htmlFor={props.id}>Your Image</label>}
+      {props.labelText && <label htmlFor={props.id}>{props.labelText}</label>}
       <div className={classes["flex-container"]}>
         <div className={classes.box}>
           {imageFile ? (
@@ -55,6 +56,7 @@ const ImageInput = function (props: ImageInputProps) {
           )}
           <input
             type="file"
+            name={props.name}
             ref={inputRef}
             id={props.id}
             accept="image/png, image/jpeg"

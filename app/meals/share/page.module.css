@@ -7,28 +7,6 @@
   margin: 2rem 0;
 }
 
-.form {
-  width: min(50rem, 100%);
-  margin: auto;
 
-}
-
-.form label {
-  margin: 0.5rem;
-  color: #a1a0a0;
-  font-size: 1.25rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-variant: all-small-caps;
-}
-
-.form input ,.form textarea{
-  margin: 0.5rem;
-}
-
-.form .row {
-  display: flex;
-  gap: 1rem;
-}
 
 /* minmax define a period length but min or max define a exact le  */
