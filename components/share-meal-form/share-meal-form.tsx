@@ -1,7 +1,7 @@
 import ImageInput from "@/components/image-input";
 import { inputs } from "@/components/UI";
 import classes from "./share-meal-form.module.css";
-import { shareMeal } from "@/actions";
+import { shareMeal } from "@/lib/actions";
 
 const ShareMealForm = function () {
   return (

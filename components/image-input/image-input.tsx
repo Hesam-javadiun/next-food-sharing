@@ -43,7 +43,7 @@ const ImageInput = function (props: ImageInputProps) {
     className: `${props.className} ${classes["image-input"]}`,
   };
   delete adjustedProps.labelText;
-  
+
   return (
     <>
       {props.labelText && <label htmlFor={props.id}>{props.labelText}</label>}
@@ -64,7 +64,9 @@ const ImageInput = function (props: ImageInputProps) {
             {...adjustedProps}
           />
         </div>
-        <button onClick={buttonClickHandler}>Pick an image</button>
+        <button onClick={buttonClickHandler} type="button">
+          Pick an image
+        </button>
       </div>
     </>
   );
