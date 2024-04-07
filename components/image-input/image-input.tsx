@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import classes from "./image-input.module.css";
 
@@ -12,7 +12,7 @@ const EmptyBox = () => (
 );
 
 type ImageInputProps = Omit<
-  React.HTMLAttributes<HTMLInputElement>,
+  React.ComponentPropsWithoutRef<"input">,
   "type" | "accept" | "onChange"
 > & {
   name?: string;

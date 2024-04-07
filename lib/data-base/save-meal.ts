@@ -20,7 +20,7 @@ export const saveMeal = async function (meal: any) {
   await createImageFile(meal.image, path);
 
   mealData.image = `/images/${fileName}`;
-
+  console.log('meal', mealData);
   addIntoDatabase(mealData as MealData);
 };
 

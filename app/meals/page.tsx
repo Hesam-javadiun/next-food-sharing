@@ -10,6 +10,7 @@ const Meals = async function () {
 
   return <MealsGrid meals={meals} />;
 };
+
 const MealsPage = function () {
 
   return (

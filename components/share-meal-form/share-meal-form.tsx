@@ -4,22 +4,23 @@ import classes from "./share-meal-form.module.css";
 import { shareMeal } from "@/lib/actions";
 
 const ShareMealForm = function () {
+
   return (
     <form className={classes.form} action={shareMeal}>
       <div className={classes.row}>
         <div>
           <label htmlFor="name">Your Name</label>
-          <inputs.input name="name" id="name"></inputs.input>
+          <inputs.input name="name" id="name" required type='text'></inputs.input>
         </div>
         <div>
           <label htmlFor="email">Your Email</label>
-          <inputs.input name="email" id="email"></inputs.input>
+          <inputs.input name="email" id="email" required type='email'></inputs.input>
         </div>
       </div>
       <label htmlFor="title">Title</label>
-      <inputs.input name="title" id="title"></inputs.input>
+      <inputs.input name="title" id="title" required type='text'></inputs.input>
       <label htmlFor="summary">Summary</label>
-      <inputs.input name="summary" id="summary"></inputs.input>
+      <inputs.input name="summary" id="summary" required type='text'></inputs.input>
       <label htmlFor="instructions">Instruction</label>
       <inputs.textarea
         name="instructions"
@@ -28,7 +29,7 @@ const ShareMealForm = function () {
         // cols="30"
         // rows="10"
       ></inputs.textarea>
-      <ImageInput name={"image"} labelText="Your Image"></ImageInput>
+      <ImageInput name={"image"} labelText="Your Image" required></ImageInput>
       <button type="submit" className={classes.submitButton}>
         Share Meal
       </button>
