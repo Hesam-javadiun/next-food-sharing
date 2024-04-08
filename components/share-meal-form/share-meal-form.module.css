@@ -24,22 +24,4 @@
   gap: 1rem;
 }
 
-.form .submitButton {
-  border: none;
-  align-self: flex-end;
-  color: var(--white-text-color);
-  padding: 0.75rem 2rem;
-  font-size: 1.25rem;
-  background: linear-gradient(
-    90deg,
-    var(--purple-color),
-    var(--purple-color-light)
-  );
-  border-radius: 0.2rem;
-  opacity: 0.9;
-}
 
-.form .submitButton:hover {
-  cursor: pointer;
-  opacity: 1;
-}

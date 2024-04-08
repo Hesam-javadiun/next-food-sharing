@@ -2,12 +2,11 @@
 import { saveMeal } from "../data-base";
 import { redirect } from "next/navigation";
 
-
-function isInvalidText(text : unknown) {
-  if(typeof text === 'string'){
+function isInvalidText(text: unknown) {
+  if (typeof text === "string") {
     return !text || text.trim() === "";
   }
-  return false
+  return false;
 }
 
 const shareMeal = async (mealFormData: FormData) => {
@@ -26,19 +25,23 @@ const shareMeal = async (mealFormData: FormData) => {
     isInvalidText(meal.instructions) ||
     isInvalidText(meal.creator) ||
     isInvalidText(meal.creator_email) ||
-    (!(<string>meal.creator_email).includes('@')) ||
-    !meal.image || meal.image.size === 0
-  ){
-    throw new Error('invalid input')
+    !(<string>meal.creator_email).includes("@") ||
+    !meal.image ||
+    meal.image.size === 0
+  ) {
+    throw new Error("invalid input");
   }
-  
 
-  await saveMeal(meal);
+  // await saveMeal(meal);
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("dummy");
+    }, 3000);
+  });
   redirect("/meals");
 };
 
 export default shareMeal;
-
 
 //! is not null
 //? if was exist go and continue

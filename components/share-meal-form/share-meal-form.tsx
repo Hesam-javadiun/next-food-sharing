@@ -2,6 +2,7 @@ import ImageInput from "@/components/image-input";
 import { inputs } from "@/components/UI";
 import classes from "./share-meal-form.module.css";
 import { shareMeal } from "@/lib/actions";
+import SubmitButton from './submit-button';
 
 const ShareMealForm = function () {
 
@@ -30,9 +31,7 @@ const ShareMealForm = function () {
         // rows="10"
       ></inputs.textarea>
       <ImageInput name={"image"} labelText="Your Image" required></ImageInput>
-      <button type="submit" className={classes.submitButton}>
-        Share Meal
-      </button>
+      <SubmitButton />
     </form>
   );
 };
