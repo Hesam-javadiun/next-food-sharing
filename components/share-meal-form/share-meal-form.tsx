@@ -1,13 +1,21 @@
+'use client';
+
 import ImageInput from "@/components/image-input";
 import { inputs } from "@/components/UI";
 import classes from "./share-meal-form.module.css";
 import { shareMeal } from "@/lib/actions";
 import SubmitButton from './submit-button';
+import { useFormState } from "react-dom";
+
+type State = {
+  message: string | null;
+}
 
 const ShareMealForm = function () {
+  const [state, formAction] = useFormState<State, FormData>(shareMeal, {message: null});
 
   return (
-    <form className={classes.form} action={shareMeal}>
+    <form className={classes.form} action={formAction}>
       <div className={classes.row}>
         <div>
           <label htmlFor="name">Your Name</label>
@@ -15,7 +23,7 @@ const ShareMealForm = function () {
         </div>
         <div>
           <label htmlFor="email">Your Email</label>
-          <inputs.input name="email" id="email" required type='email'></inputs.input>
+          <inputs.input name="email" id="email" required type='text'></inputs.input>
         </div>
       </div>
       <label htmlFor="title">Title</label>
@@ -32,6 +40,7 @@ const ShareMealForm = function () {
       ></inputs.textarea>
       <ImageInput name={"image"} labelText="Your Image" required></ImageInput>
       <SubmitButton />
+      {state.message && <p>{state.message}</p>}
     </form>
   );
 };

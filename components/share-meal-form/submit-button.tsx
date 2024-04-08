@@ -4,6 +4,7 @@ import { useFormStatus } from "react-dom";
 
 const SubmitButton = function () {
   const { pending } = useFormStatus();
+  
   return (
     <button type="submit" className={classes.submitButton} disabled={pending}>
       {pending ? `submitting...` : `Share Meal`}

@@ -9,7 +9,10 @@ function isInvalidText(text: unknown) {
   return false;
 }
 
-const shareMeal = async (mealFormData: FormData) => {
+const shareMeal = async (
+  pervState: any,
+  mealFormData: FormData
+) => {
   const meal = {
     creator: mealFormData!.get("name"),
     creator_email: mealFormData!.get("email"),
@@ -29,7 +32,8 @@ const shareMeal = async (mealFormData: FormData) => {
     !meal.image ||
     meal.image.size === 0
   ) {
-    throw new Error("invalid input");
+    // throw new Error("invalid input");
+    return { message: "invalid input.!" };
   }
 
   // await saveMeal(meal);
@@ -42,6 +46,3 @@ const shareMeal = async (mealFormData: FormData) => {
 };
 
 export default shareMeal;
-
-//! is not null
-//? if was exist go and continue
