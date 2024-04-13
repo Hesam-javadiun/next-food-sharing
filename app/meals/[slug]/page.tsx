@@ -15,6 +15,7 @@ const MealDetailsPage = function ({ params }: any) {
   if (hasNotFoundMeal(meal)) {
     notFound();
   }
+  
   meal.instructions = meal.instructions.replace(/\n/g, '<br />');
   return (
     <>

@@ -1,4 +1,5 @@
 "use server";
+import { revalidatePath } from "next/cache";
 import { saveMeal } from "../data-base";
 import { redirect } from "next/navigation";
 
@@ -36,12 +37,14 @@ const shareMeal = async (
     return { message: "invalid input.!" };
   }
 
-  // await saveMeal(meal);
+  await saveMeal(meal);
   await new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("dummy");
     }, 3000);
   });
+  
+  revalidatePath('/meals')
   redirect("/meals");
 };
 
