@@ -15,12 +15,13 @@ export const saveMeal = async function (meal: any) {
   const { slug, fileName } = generateUniqueFileName(meal.title, meal.image);
   mealData.slug = slug;
 
-  const path = `${savedImagePath}/${fileName}`;
+  // const path = `${savedImagePath}/${fileName}`;
 
-  await createImageFile(meal.image, path);
+  // await createImageFile(meal.image, path);
 
-  mealData.image = `/images/${fileName}`;
-  console.log('meal', mealData);
+  // mealData.image = `/images/${fileName}`;
+  mealData.image = `/images/macncheese.jpg`;
+
   addIntoDatabase(mealData as MealData);
 };
 

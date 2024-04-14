@@ -11,9 +11,8 @@ import pizzaImage from "@/assets/pizza.jpg";
 import schnitzelImage from "@/assets/schnitzel.jpg";
 import tomatoSaladImage from "@/assets/tomato-salad.jpg";
 import { useEffect, useState, useLayoutEffect } from "react";
-import { clearInterval, clearTimeout } from "timers";
 
-//ba setInterval bayad bezanam va vaghti ke image rerender shod bayad bezanam
+
 
 const imageSources = [
   { image: burgerImage, alt: "burgerImage" },

@@ -15,7 +15,7 @@ const CustomizedLink = function ({
 }: CustomizedLinkProps) {
   const anchorProperties = {
     ...rest,
-    className: `${isBackgroundColorFilled ? classes.bgFilled : classes.link} ${
+    className: `${isBackgroundColorFilled ? classes.bgFilled : classes.textFilled} ${
       rest.className
     }`,
   };

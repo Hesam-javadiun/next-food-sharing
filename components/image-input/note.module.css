@@ -1,0 +1,28 @@
+
+.note-container {
+
+    font-size: 1rem;
+    /* color: rgb(161, 99, 99); */
+    color: rgb(62, 61, 61);
+    letter-spacing: 0.05rem;
+    padding: 0.5rem 0.5rem 0;
+    display: flex;
+    opacity: 0.7;
+}
+
+.note-container .noteText {
+    background-color: #a9a9a9;
+    text-align: justify;
+    border-radius: 0.2rem;
+    border-left: 0.4rem solid var(--purple-color);
+    padding: 0.2rem;
+    flex-grow: 1;
+}
+
+.note-container strong {
+    /* font-variant: all-small-caps ; */
+    font-size: 1.1rem;
+    letter-spacing: 0;
+}
+
+

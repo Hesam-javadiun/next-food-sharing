@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
-
+import Note from "./note";
 import classes from "./image-input.module.css";
 
 const EmptyBox = () => (
@@ -46,6 +46,7 @@ const ImageInput = function (props: ImageInputProps) {
 
   return (
     <>
+      <Note />
       {props.labelText && <label htmlFor={props.id}>{props.labelText}</label>}
       <div className={classes["flex-container"]}>
         <div className={classes.box}>

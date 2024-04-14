@@ -1,5 +1,5 @@
 .textFilled{
-    background: linear-gradient(var(--purple-color), var(--purple-color-deep));
+    background: linear-gradient(90deg, var(--purple-color), var(--purple-color-light));
     background-clip: text;
     color: transparent;
     --webkit-background-clip: text;
