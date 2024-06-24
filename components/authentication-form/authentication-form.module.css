@@ -1,0 +1,54 @@
+.form {
+  max-width: 40rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(var(--purple-color), var(--purple-color-light));
+
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.form ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.form img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  align-self: center;
+  filter: drop-shadow(0 0 0.25rem rgb(43, 43, 43));
+}
+
+.form button {
+  margin: 2rem 0 0 0;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-size: "Quicksand", sans-serif;
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--white-text-color);
+  background-color: var(--background-color);
+  letter-spacing: 0.1rem;
+  filter: drop-shadow(0 0 0.25rem rgb(43, 43, 43));
+}
+
+.form a {
+    align-self: center;
+    color: var(--background-color)
+}
+/* 
+* width ye limit khasi dashte bashe 
+* 
+* width
+* 
+
+*/

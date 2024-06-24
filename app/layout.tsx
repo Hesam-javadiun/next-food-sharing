@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import BackgroundSvg from "@/components/UI/background-svg";
-import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Food Reservation",
@@ -16,8 +14,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <BackgroundSvg />
-        <Header />
         {children}
       </body>
     </html>
