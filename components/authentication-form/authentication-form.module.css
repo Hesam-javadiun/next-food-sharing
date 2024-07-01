@@ -13,6 +13,9 @@
 
 .form ul {
   list-style-type: none;
+}
+
+.form .inputs {
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -41,10 +44,45 @@
   filter: drop-shadow(0 0 0.25rem rgb(43, 43, 43));
 }
 
-.form a {
-    align-self: center;
-    color: var(--background-color)
+.form button:hover {
+  cursor: pointer;
+  outline: 0.1rem solid #b6b5b5;
 }
+
+.form a {
+  align-self: center;
+  color: var(--background-color);
+}
+
+.form a:hover {
+  cursor: pointer;
+  background: linear-gradient(#b6b5b5, #b6b5b5);
+  color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 0.25rem rgb(43, 43, 43));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: rgba(
+    40,
+    44,
+    52,
+    0.8
+  ); /* var(--background-color ) with opacity .8*/
+}
+
+.error p {
+  color: var(--error-text-color);
+
+  margin: 0;
+  font-size: 1rem;
+}
+
 /* 
 * width ye limit khasi dashte bashe 
 * 

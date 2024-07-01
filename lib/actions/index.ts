@@ -1,3 +1,3 @@
 import shareMeal from "./share-meal";
-
-export { shareMeal };
+import {  authAction } from "./auth";
+export { shareMeal, authAction};

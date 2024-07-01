@@ -1,5 +1,6 @@
 "use client";
 
+import { useFormState } from "react-dom";
 import Image from "next/image";
 import { inputs } from "../UI";
 import classes from "./authentication-form.module.css";
@@ -8,14 +9,25 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { ReadonlyURLSearchParams } from "next/navigation";
 import { notFound } from "next/navigation";
+import { authAction } from "@/lib/actions";
+
+export type AuthFormState = {
+  errors: { [errorName: string]: string } | null;
+};
 
 const AuthenticationForm = function () {
   const searchParams = useSearchParams();
   const isLogin = isLoginMode(validateAndGetMode(searchParams));
 
+  const [state, action] = useFormState<AuthFormState>(
+    // @ts-ignore
+    authAction.bind(null, isLogin),
+    { errors: null }
+  );
+  console.log('state', state);
   return (
-    <form className={classes.form}>
-      <ul>
+    <form className={classes.form} action={action}>
+      <ul className={classes.inputs}>
         <Image
           src={loginLogo.src}
           alt={"login logo"}
@@ -24,17 +36,31 @@ const AuthenticationForm = function () {
           priority
         />
         <li>
-          <label htmlFor="user-name">Username:</label>
-          <inputs.input name="user-name"></inputs.input>
+          <label htmlFor="email">Email:</label>
+          <inputs.input name="email"></inputs.input>
         </li>
         <li>
           <label htmlFor="password">Password:</label>
           <inputs.input name="password"></inputs.input>
         </li>
-        {!isLogin && <li>
-          <label htmlFor="repeat-password">Repeat Password:</label>
-          <inputs.input name="repeat-password"></inputs.input>
-        </li>}
+        {!isLogin && (
+          <li>
+            <label htmlFor="repeat-password">Repeat Password:</label>
+            <inputs.input name="repeat-password"></inputs.input>
+          </li>
+        )}
+        {state.errors && (
+          <ul className={classes.error}>
+            {Object.entries(state.errors as object).map(
+              ([error, errorMessage]) => (
+                <li key={error}>
+                  <p>{errorMessage}</p>
+                </li>
+              )
+            )}
+          </ul>
+        )}
+
         <button type="submit">
           {isLogin ? "Log in" : "Create an account"}
         </button>
