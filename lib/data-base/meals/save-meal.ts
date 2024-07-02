@@ -1,11 +1,10 @@
-import slugify from "slugify";
-import { type MealData } from "./meal-type";
-import xss from "xss";
+import sql from 'better-sqlite3';
 import fs from "node:fs";
-import sql from 'better-sqlite3'
-
+import slugify from "slugify";
+import xss from "xss";
+import { type MealData } from "./meal-type";
+import db from '../db';
 const savedImagePath = `public/images`;
-const db = sql('meals.db');
 
 export const saveMeal = async function (meal: any) {
   const mealData: Partial<MealData> = { ...meal };

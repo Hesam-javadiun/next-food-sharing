@@ -3,8 +3,6 @@ import ColoredText from "@/components/UI/colored-text";
 import CommunityContent from "@/components/community-content";
 import classes from './page.module.css';
 
-
-
 const CommunityPage = function () {
   return (
     <main className={classes.container}>

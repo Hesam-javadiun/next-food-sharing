@@ -43,12 +43,6 @@ const AuthenticationForm = function () {
           <label htmlFor="password">Password:</label>
           <inputs.input name="password"></inputs.input>
         </li>
-        {!isLogin && (
-          <li>
-            <label htmlFor="repeat-password">Repeat Password:</label>
-            <inputs.input name="repeat-password"></inputs.input>
-          </li>
-        )}
         {state.errors && (
           <ul className={classes.error}>
             {Object.entries(state.errors as object).map(

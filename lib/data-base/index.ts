@@ -1,4 +1,6 @@
-export { getMeals } from "./get-meals";
-export { getMeal } from "./get-meal";
-export { type MealData } from "./meal-type";
-export { saveMeal } from "./save-meal";
+export { getMeal } from "./meals/get-meal";
+export { getMeals } from "./meals/get-meals";
+export { type MealData } from "./meals/meal-type";
+export { saveMeal } from "./meals/save-meal";
+
+
