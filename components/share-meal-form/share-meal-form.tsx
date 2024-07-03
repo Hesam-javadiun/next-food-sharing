@@ -1,11 +1,11 @@
 'use client';
 
-import ImageInput from "@/components/image-input";
+import { shareMeal } from "@/actions";
 import { inputs } from "@/components/UI";
-import classes from "./share-meal-form.module.css";
-import { shareMeal } from "@/lib/actions";
-import SubmitButton from './submit-button';
+import ImageInput from "@/components/image-input";
 import { useFormState } from "react-dom";
+import classes from "./share-meal-form.module.css";
+import SubmitButton from './submit-button';
 
 type State = {
   message: string | null;

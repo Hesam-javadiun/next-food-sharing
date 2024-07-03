@@ -8,7 +8,7 @@ export default class Hash {
     return hashedPassword.toString("hex") + ":" + salt;
   }
 
-  public verifyPassword(storedPassword: string , suppliedPassword : unknown) {
+  public verifyPassword(storedPassword: string , suppliedPassword : string) {
     const [hashedPassword, salt] = storedPassword.split(':');
     const hashedPasswordBuf = Buffer.from(hashedPassword, 'hex');
     const suppliedPasswordBuf = crypto.scryptSync(suppliedPassword, salt, 64);

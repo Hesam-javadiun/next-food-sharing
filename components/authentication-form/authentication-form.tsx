@@ -1,15 +1,14 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { authenticate } from "@/actions";
+import loginLogo from "@/public/images/login-logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import type { ReadonlyURLSearchParams } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
+import { useFormState } from "react-dom";
 import { inputs } from "../UI";
 import classes from "./authentication-form.module.css";
-import loginLogo from "@/public/images/login-logo.png";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import type { ReadonlyURLSearchParams } from "next/navigation";
-import { notFound } from "next/navigation";
-import { authAction } from "@/lib/actions";
 
 export type AuthFormState = {
   errors: { [errorName: string]: string } | null;
@@ -21,10 +20,10 @@ const AuthenticationForm = function () {
 
   const [state, action] = useFormState<AuthFormState>(
     // @ts-ignore
-    authAction.bind(null, isLogin),
+    authenticate.bind(null, isLogin),
     { errors: null }
   );
-  console.log('state', state);
+  console.log("state", state);
   return (
     <form className={classes.form} action={action}>
       <ul className={classes.inputs}>

@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
-import { saveMeal } from "../data-base";
 import { redirect } from "next/navigation";
+import { saveMeal } from "../lib/data-base";
 
 function isInvalidText(text: unknown) {
   if (typeof text === "string") {
