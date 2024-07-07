@@ -1,5 +1,5 @@
 type ValidateInputType = {
-  validator: (value: any) => boolean;
+  isValid: (value: any) => boolean;
   message: string;
   code: string;
 };
@@ -26,12 +26,12 @@ export default class Validation {
   }
 
   private validate(
-    { code, validator, message }: ValidateInputType,
+    { code, isValid, message }: ValidateInputType,
     errors: ErrorObjectType,
     value: unknown
   ) {
     try {
-      if (validator(value)) {
+      if (!isValid(value)) {
         throw Error(message, { cause: { code, value } });
       }
     } catch (er: unknown) {
@@ -43,12 +43,10 @@ export default class Validation {
     }
   }
 
-  public generateValidation(
-    { code, validator, message }: ValidateInputType
-  ) {
-    return this.validate.bind(null, {
+  public generateValidation({ code, isValid, message }: ValidateInputType) {
+    return this.validate.bind(this, {
       code,
-      validator,
+      isValid,
       message,
     });
   }

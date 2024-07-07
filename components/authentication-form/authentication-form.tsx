@@ -23,7 +23,7 @@ const AuthenticationForm = function () {
     authenticate.bind(null, isLogin),
     { errors: null }
   );
-  console.log("state", state);
+  
   return (
     <form className={classes.form} action={action}>
       <ul className={classes.inputs}>
