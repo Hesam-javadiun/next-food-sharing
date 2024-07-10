@@ -1,5 +1,5 @@
 type ValidateInputType = {
-  isValid: (value: any) => boolean;
+  isValid: (...value: any) => boolean;
   message: string;
   code: string;
 };
@@ -28,10 +28,10 @@ export default class Validation {
   private validate(
     { code, isValid, message }: ValidateInputType,
     errors: ErrorObjectType,
-    value: unknown
+    ...value: unknown[]
   ) {
     try {
-      if (!isValid(value)) {
+      if (!isValid(...value)) {
         throw Error(message, { cause: { code, value } });
       }
     } catch (er: unknown) {

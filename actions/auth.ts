@@ -26,7 +26,7 @@ export async function authenticate(
 async function singUp(prevState: AuthFormStateType, formData: FormData) {
   const email = formData.get("email")! as string;
   const password = formData.get("password")! as string;
-  
+
   let errors: { [errorName: string]: string } = {};
   validateEmail(errors, email);
   validatePassword(errors, password);
@@ -53,7 +53,32 @@ async function singUp(prevState: AuthFormStateType, formData: FormData) {
   }
 }
 
-function login(prevState: AuthFormStateType, formData: FormData) {}
+async function login(prevState: AuthFormStateType, formData: FormData) {
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+
+  let errors = {};
+  const user = getUserByEmail(email);
+  verifyEmail(errors, user);
+  if ("email" in errors) {
+    return {
+      errors,
+    };
+  }
+
+  verifyPassword(errors, {
+    storedPassword: (user as UserType).password,
+    password,
+  });
+
+
+  if ("password" in errors) {
+    return {
+      errors,
+    };
+  }
+  redirect("/");
+}
 
 const validateEmail = validation.generateValidation({
   isValid: (email) => email.includes("@"),
@@ -67,10 +92,18 @@ const validatePassword = validation.generateValidation({
   message: "Password must be at least 8 characters long.",
 });
 
-// const isErrorObjectEmpty = validation.generateValidation({
-//   isValid: (errorObj) => Object.keys(errorObj).length > 0,
+const verifyEmail = validation.generateValidation({
+  isValid: (user) => !!user,
+  code: "email",
+  message: "email does NOT exists!",
+});
 
-// })
+const verifyPassword = validation.generateValidation({
+  isValid: ({ storedPassword, password }) =>
+    hash.verifyPassword(storedPassword, password),
+  code: "password",
+  message: "Password didn't match",
+});
 
 function isErrorThrownFromDatabase(error: unknown) {
   //@ts-ignore

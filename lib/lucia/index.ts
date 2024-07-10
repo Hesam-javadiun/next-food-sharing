@@ -1,1 +1,1 @@
-export { createAuthSession } from "./auth";
+export { createAuthSession, verifyAuth } from "./auth";

@@ -1,0 +1,4 @@
+.pending {
+    pointer-events: none;
+    opacity: .7;
+}

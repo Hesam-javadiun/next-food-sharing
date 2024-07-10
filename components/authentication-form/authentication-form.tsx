@@ -9,7 +9,7 @@ import { notFound, useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
 import { inputs } from "../UI";
 import classes from "./authentication-form.module.css";
-
+import SubmitButtonAndNavigationLink from "./submit-button";
 export type AuthFormState = {
   errors: { [errorName: string]: string } | null;
 };
@@ -23,7 +23,7 @@ const AuthenticationForm = function () {
     authenticate.bind(null, isLogin),
     { errors: null }
   );
-  
+
   return (
     <form className={classes.form} action={action}>
       <ul className={classes.inputs}>
@@ -53,13 +53,13 @@ const AuthenticationForm = function () {
             )}
           </ul>
         )}
-
-        <button type="submit">
-          {isLogin ? "Log in" : "Create an account"}
-        </button>
-        <Link href={isLogin ? "auth/?mode=signup" : "auth/?mode=login"}>
-          {isLogin ? "Create an account" : "Log in with existing account"}
-        </Link>
+        <SubmitButtonAndNavigationLink
+          buttonText={isLogin ? "Log in" : "Create an account"}
+          linkText={
+            isLogin ? "Create an account" : "Log in with existing account"
+          }
+          href={isLogin ? "auth/?mode=signup" : "auth/?mode=login"}
+        />
       </ul>
     </form>
   );

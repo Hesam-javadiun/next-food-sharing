@@ -1,8 +1,11 @@
 import { Link, PurpleText } from "@/components/UI";
 import ImageSlider from "@/components/image-slider";
 import classes from "./page.module.css";
+import { verifyAuth } from "@/lib/lucia";
 
-const Home = function () {
+export default async function  Home() {
+  const authResult = await verifyAuth(); 
+  
   return (
     <>
       <header className={classes.headerContainer}>
@@ -56,5 +59,3 @@ const Home = function () {
     </>
   );
 };
-
-export default Home;
