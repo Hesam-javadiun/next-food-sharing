@@ -4,20 +4,25 @@ import { authenticate } from "@/actions";
 import loginLogo from "@/public/images/login-logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import type { ReadonlyURLSearchParams } from "next/navigation";
-import { notFound, useSearchParams } from "next/navigation";
+
 import { useFormState } from "react-dom";
 import { inputs } from "../UI";
 import classes from "./authentication-form.module.css";
 import SubmitButtonAndNavigationLink from "./submit-button";
+import { AuthModes } from "@/app/(authentication)/auth/page";
+
 export type AuthFormState = {
   errors: { [errorName: string]: string } | null;
 };
 
-const AuthenticationForm = function () {
-  const searchParams = useSearchParams();
-  const isLogin = isLoginMode(validateAndGetMode(searchParams));
+type AuthenticationFormProps = {
+  mode: AuthModes;
+};
 
+const isLoginMode = (mode: string) => mode === AuthModes.LOGIN;
+
+const AuthenticationForm = function ({ mode }: AuthenticationFormProps) {
+  const isLogin = isLoginMode(mode);
   const [state, action] = useFormState<AuthFormState>(
     // @ts-ignore
     authenticate.bind(null, isLogin),
@@ -58,7 +63,11 @@ const AuthenticationForm = function () {
           linkText={
             isLogin ? "Create an account" : "Log in with existing account"
           }
-          href={isLogin ? "auth/?mode=signup" : "auth/?mode=login"}
+          href={
+            isLogin
+              ? `auth/?mode=${AuthModes.SIGN_UP}`
+              : `auth/?mode=${AuthModes.LOGIN}`
+          }
         />
       </ul>
     </form>
@@ -66,34 +75,3 @@ const AuthenticationForm = function () {
 };
 
 export default AuthenticationForm;
-
-const validateAndGetMode = (searchParams: ReadonlyURLSearchParams) => {
-  if (isEmpty(searchParams)) {
-    return "login";
-  }
-
-  if (!isModeExist(searchParams)) {
-    notFound();
-  }
-
-  const mode = searchParams.get("mode") as string;
-  if (!isValidMode(mode)) {
-    notFound();
-  }
-
-  return mode;
-};
-
-const isModeExist = (searchParams: ReadonlyURLSearchParams) =>
-  searchParams.has("mode") && searchParams.size === 1;
-
-const isEmpty = (searchParams: ReadonlyURLSearchParams) => {
-  return searchParams.size === 0;
-};
-
-const isValidMode = (mode: string) => {
-  return isLoginMode(mode) || isSignupMode(mode);
-};
-
-const isLoginMode = (mode: unknown) => mode === "login";
-const isSignupMode = (mode: string) => mode === "signup";
