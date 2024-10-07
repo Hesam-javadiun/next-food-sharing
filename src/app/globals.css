@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* enum Sizes {
+  SMALL = 576,
+  MEDIUM = 768, 16
+  LARGE = 992, 20
+  XLARGE = 1200, 21 
+  XXLARGE = 1400, 23
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-family: "Quicksand", sans-serif;
+
+  /*
+  to understand where this came from read this:
+  https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/ 
+  you can use this tool calculate fluid typography
+  https://modern-fluid-typography.vercel.app/
+  */
+  font-size: clamp(1rem, 1vw + 0.63rem, 1.5rem);
+
+  --background-color: #282c34;
+  --purple-color-light: #dd78f4;
+  --purple-color: #7d54fa;
+  --purple-color-deep: #5d4b81;
+  --purple-color-deeper: rgb(181, 0, 252);
+  --purple-color-light-and-dark: rgb(100, 93, 106);
+  --input-background-color: #1c2027;
+  --error-text-color: rgb(244, 96, 96);
+  --white-text-color: #ddd6cb;
+}
+
+body {
+  background: radial-gradient(var(--background-color), var(--background-color));
+  gap: 2rem;
+  /* padding: 2rem; */
+  overflow-y: auto;
+}
+
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--white-text-color);
+}
+
+h2 {
+  color: var(--white-text-color);
+}
+
+p {
+  color: var(--white-text-color);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+/* enum Sizes {
+  SMALL = 576,
+  MEDIUM = 768,
+  LARGE = 992,
+  XLARGE = 1200,
+  XXLARGE = 1400,
+} */
+
+/* @media (1400px < width) {
+}
+
+@media (1200px < width <1400px) {
+}
+
+@media (992px < width <1200px) {
+}
+
+@media (768px < width <992px) {
+}
+
+@media (576px < width <768px) {
+} */
