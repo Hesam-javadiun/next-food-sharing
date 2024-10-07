@@ -15,5 +15,3 @@ export default class Hash {
     return crypto.timingSafeEqual(hashedPasswordBuf, suppliedPasswordBuf);
   }
 }
-
-
