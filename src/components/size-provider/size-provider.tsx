@@ -1,8 +1,11 @@
 "use client";
-
-import { SizeContext } from "@/src/context/size-context";
+//must be removed from the code 
 import { sizes } from "@/src/utility";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState, createContext } from "react";
+
+const createSizesState = sizes.generateDeviceStatus();
+export const SizeContext = createContext(createSizesState());
+
 
 const createSizeState = sizes.generateDeviceStatus();
 

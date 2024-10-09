@@ -20,25 +20,25 @@ class SizesUtility {
     return deviceSize <= breakpoint;
   }
 
-  // private createLayoutState(): SizesStateType {
-  //   return {
-  //     isSmall: matchMedia(`(max-width: ${Sizes.SMALL}px)`).matches,
-  //     isSmallDevice: this.checkDimension(this.sizes.SMALL, width),
-  //     isMediumDevice: this.checkDimension(this.sizes.MEDIUM, width),
-  //     isLargeDevice: this.checkDimension(this.sizes.LARGE, width),
-  //     isXLargeDevice: this.checkDimension(this.sizes.XLARGE, width),
-  //     isXXLargeDevice: this.checkDimension(this.sizes.XXLARGE, width),
-  //   };
-  // }
   private createSizeState(): SizesStateType {
     return {
-      isSmallDevice: matchMedia(`(max-width: ${Sizes.SMALL}px)`).matches,
-      isMediumDevice: matchMedia(`(max-width: ${Sizes.MEDIUM}px)`).matches,
-      isLargeDevice: matchMedia(`(max-width: ${Sizes.LARGE}px)`).matches,
-      isXLargeDevice: matchMedia(`(max-width: ${Sizes.XLARGE}px)`).matches,
-      isXXLargeDevice: matchMedia(`(max-width: ${Sizes.XXLARGE}px)`).matches,
+      // isSmall: matchMedia(`(max-width: ${Sizes.SMALL}px)`).matches,
+      isSmallDevice: this.checkDimension(Sizes.SMALL, width),
+      isMediumDevice: this.checkDimension(Sizes.MEDIUM, width),
+      isLargeDevice: this.checkDimension(Sizes.LARGE, width),
+      isXLargeDevice: this.checkDimension(Sizes.XLARGE, width),
+      isXXLargeDevice: this.checkDimension(Sizes.XXLARGE, width),
     };
   }
+  // private createSizeState(): SizesStateType {
+  //   return {
+  //     isSmallDevice: matchMedia(`(max-width: ${Sizes.SMALL}px)`).matches,
+  //     isMediumDevice: matchMedia(`(max-width: ${Sizes.MEDIUM}px)`).matches,
+  //     isLargeDevice: matchMedia(`(max-width: ${Sizes.LARGE}px)`).matches,
+  //     isXLargeDevice: matchMedia(`(max-width: ${Sizes.XLARGE}px)`).matches,
+  //     isXXLargeDevice: matchMedia(`(max-width: ${Sizes.XXLARGE}px)`).matches,
+  //   };
+  // }
 
   generateDeviceStatus(): () => SizesStateType {
     return this.createSizeState.bind(null);

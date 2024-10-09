@@ -1,4 +1,3 @@
-import SizeProvider from '@/src/components/size-provider';
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SizeProvider>{children}</SizeProvider>
+      {children}
       </body>
     </html>
   );
