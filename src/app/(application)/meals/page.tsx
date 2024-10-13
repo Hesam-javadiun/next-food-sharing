@@ -4,7 +4,11 @@ import { getMeals } from "@/src/lib/data-base";
 import { Suspense } from "react";
 import LoadingMeals from './loading-meals';
 import classes from "./page.module.css";
-
+//todo 
+//it must use better typescript 
+//you have to add api for this next res and request
+//add tailwind and add test 
+//must extract whole logic fetching and showing meals 
 const Meals = async function () {
   const meals = await getMeals();
 

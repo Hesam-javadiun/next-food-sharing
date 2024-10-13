@@ -12,7 +12,8 @@ import schnitzelImage from "@/assets/schnitzel.jpg";
 import tomatoSaladImage from "@/assets/tomato-salad.jpg";
 import { useEffect, useState, useLayoutEffect } from "react";
 
-
+//ToDo 
+//add tailwind add test 
 
 const imageSources = [
   { image: burgerImage, alt: "burgerImage" },

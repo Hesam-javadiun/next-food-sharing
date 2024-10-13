@@ -5,6 +5,8 @@ enum Sizes {
   XLARGE = 1200,
   XXLARGE = 1400,
 }
+//ToDo 
+//Must be removed 
 
 export type SizesStateType = {
   isSmallDevice: boolean;

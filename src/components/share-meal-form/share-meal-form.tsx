@@ -11,6 +11,11 @@ type State = {
   message: string | null;
 }
 
+//todo 
+//extract a form component   
+//extract submit button 
+//add input component with label
+//add tailwind add test 
 const ShareMealForm = function () {
   const [state, formAction] = useFormState<State, FormData>(shareMeal, {message: null});
 

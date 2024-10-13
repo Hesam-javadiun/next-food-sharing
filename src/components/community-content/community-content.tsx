@@ -5,7 +5,9 @@ type CommunityContentProps = {
   imageSource: any;
   alt: string;
 };
-
+//ToDo
+//this component must be removed or add to community page 
+// add tailwind add test 
 const CommunityContent = function ({
   paragraph,
   imageSource,

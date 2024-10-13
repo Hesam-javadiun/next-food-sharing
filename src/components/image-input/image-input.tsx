@@ -10,7 +10,9 @@ const EmptyBox = () => (
     <span>picked yet.</span>
   </div>
 );
-
+//toDo
+//add test add tailwind
+//extract tooltip component change its name (the name is note)
 type ImageInputProps = Omit<
   React.ComponentPropsWithoutRef<"input">,
   "type" | "accept" | "onChange"

@@ -8,7 +8,9 @@ import { notFound } from "next/navigation";
 const hasNotFoundMeal = (meal: unknown) => {
   return !Boolean(meal);
 };
-
+//toDo
+//add tailwind add typescript add test 
+//add 
 const MealDetailsPage = function ({ params }: any) {
   const meal = getMeal(params.slug) as MealData;
 

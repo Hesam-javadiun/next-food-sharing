@@ -5,6 +5,10 @@ import classes from "./meals-grid.module.css";
 type MealsGridProps = {
   meals: MealData[]
 };
+//ToDo
+//extract grid 
+//extract meal fetching 
+//add tailwind add test 
 
 const MealsGrid = function ({ meals }: MealsGridProps) {
   return (

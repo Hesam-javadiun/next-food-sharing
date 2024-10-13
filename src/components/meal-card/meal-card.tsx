@@ -7,7 +7,8 @@ type MealCardProps = Pick<
   MealData,
   "title" | "creator" | "summary" | "image" | "slug"
 >;
-
+//ToDo 
+//add tailwind add test 
 const MealCard = function ({
   title,
   creator,

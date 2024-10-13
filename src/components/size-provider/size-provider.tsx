@@ -6,7 +6,8 @@ import { useEffect, useReducer, useState, createContext } from "react";
 const createSizesState = sizes.generateDeviceStatus();
 export const SizeContext = createContext(createSizesState());
 
-
+//todo 
+//remove this component 
 const createSizeState = sizes.generateDeviceStatus();
 
 const reducer = (pervState: ReturnType<typeof createSizeState>) =>

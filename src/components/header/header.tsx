@@ -5,11 +5,13 @@ import Image from "next/image";
 import imageSource from "@/assets/logo.png";
 import classes from "./header.module.css";
 import { usePathname } from "next/navigation";
-//how to make an string with '/'
 
 const isActive = (route: string, path: string) => {
   return path.startsWith(route);
 };
+
+//ToDo 
+// add tailwind add test
 
 const Header = function () {
   const path = usePathname();
