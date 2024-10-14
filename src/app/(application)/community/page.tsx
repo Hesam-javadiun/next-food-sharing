@@ -1,5 +1,5 @@
 import communityPerkImage from "@/assets/icons/meal.png";
-import ColoredText from "@/src/components/UI/colored-text";
+import ColoredText from "@/src/components/UI/purple-text";
 import CommunityContent from "@/src/components/community-content";
 import classes from './page.module.css';
 

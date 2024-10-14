@@ -1,8 +1,0 @@
-.typography {
-    background: linear-gradient(90deg , var(--purple-color), var(--purple-color-light));
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* font-size: 1em; */
-}

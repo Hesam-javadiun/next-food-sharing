@@ -3,22 +3,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import imageSource from "@/assets/logo.png";
-import classes from "./header.module.css";
+// import classes from "./header.module.css";
 import { usePathname } from "next/navigation";
-
+import { Typography } from "@/src/components/UI";
 const isActive = (route: string, path: string) => {
   return path.startsWith(route);
 };
-
-//ToDo 
-// add tailwind add test
 
 const Header = function () {
   const path = usePathname();
 
   return (
-    <header className={classes.headerContainer}>
-      <Link href="/" className={classes.logoContainer}>
+    <header className="flex justify-around items-center">
+      <Link
+        href="/"
+        className="w-12 h-12 flex gap-4 items-center drop-shadow-md"
+      >
         <Image
           src={imageSource.src}
           alt={"food community logo"}
@@ -26,29 +26,31 @@ const Header = function () {
           height={imageSource.height}
           priority
         ></Image>
-        <p>Food Reservation</p>
+        <Typography className="whitespace-nowrap all-small-caps" as="h1">
+          Food Reservation
+        </Typography>
       </Link>
       <nav>
-        <ul>
+        <ul className="flex gap-8">
           <li>
-            <p>
+            <Typography>
               <Link
                 href="/meals"
-                className={isActive("/meals", path) ? classes.active : ""}
+                className={isActive("/meals", path) ? "" : ""}
               >
                 Browse Meals
               </Link>
-            </p>
+            </Typography>
           </li>
           <li>
-            <p>
+            <Typography>
               <Link
                 href="/community"
-                className={isActive("/meals", path) ? classes.active : ""}
+                className={isActive("/meals", path) ? "" : ""}
               >
                 Foodies Community
               </Link>
-            </p>
+            </Typography>
           </li>
         </ul>
       </nav>

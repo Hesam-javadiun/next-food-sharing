@@ -1,7 +1,6 @@
 import { it, expect, vi } from "vitest";
 import { screen, render} from "@testing-library/react";
 import Header from "./header";
-//usePathName ro mock konam;
 
 vi.mock("next/navigation", () => {
   return {
