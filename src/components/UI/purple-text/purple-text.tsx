@@ -2,11 +2,21 @@ import type { ReactNode } from "react";
 
 type PurpleTextProps = {
   children: ReactNode;
+  isBackgroundColorFilled?: boolean;
 };
 
-const PurpleText = function ({ children }: PurpleTextProps) {
+const PurpleText = function ({
+  children,
+  isBackgroundColorFilled = false,
+}: PurpleTextProps) {
   return (
-    <span className="bg-gradient-to-r from-purple-color to-purple-light-color bg-clip-text text-transparent">
+    <span
+      className={
+        isBackgroundColorFilled
+          ? "custom-purple-background "
+          : "custom-purple-text"
+      }
+    >
       {children}
     </span>
   );
