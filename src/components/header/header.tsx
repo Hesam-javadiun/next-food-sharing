@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import imageSource from "@/assets/logo.png";
-// import classes from "./header.module.css";
 import { usePathname } from "next/navigation";
 import { Typography, Button, PurpleText } from "@/src/components/UI";
 
@@ -14,7 +13,7 @@ const Header = function () {
   const path = usePathname();
 
   return (
-    <header className="flex justify-around items-center">
+    <header className="flex justify-around items-center mt-4">
       <Button
         href="/"
         className="w-12 h-12 flex gap-4 items-center drop-shadow-md"
@@ -35,7 +34,7 @@ const Header = function () {
         </Typography>
       </Button>
       <nav>
-        <ul className="flex gap-8">
+        <ul className="flex gap-4 md:gap-8">
           {[
             { route: "/meals", textContent: "Browse Meals" },
             { route: "/community", textContent: "Foodies Community" },
@@ -43,7 +42,7 @@ const Header = function () {
             <li key={route}>
               <Button href={route}>
                 <Typography
-                  className={`custom-text-shadow custom-white-text hover:from-fuchsia-400 hover:to-fuchsia-400 ${
+                  className={`text-[0.8em]  custom-text-shadow custom-white-text hover:from-fuchsia-400 hover:to-fuchsia-400 ${
                     isActive(route, path)
                       ? "from-fuchsia-400 to-fuchsia-400"
                       : ""

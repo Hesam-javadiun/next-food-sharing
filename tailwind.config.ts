@@ -15,6 +15,9 @@ const config: Config = {
         "error-text-color":'var(--error-text-color)',
         "white-text-color":'var(--white-text-color)',
       },
+      spacing: {
+        '128': '32rem',
+      }
     },
   },
   plugins: [],

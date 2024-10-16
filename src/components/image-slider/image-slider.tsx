@@ -1,6 +1,6 @@
 "use client";
 
-import classes from "./styles.module.css";
+
 import Image, { type StaticImageData } from "next/image";
 
 import burgerImage from "@/assets/burger.jpg";
@@ -10,10 +10,8 @@ import macncheeseImage from "@/assets/macncheese.jpg";
 import pizzaImage from "@/assets/pizza.jpg";
 import schnitzelImage from "@/assets/schnitzel.jpg";
 import tomatoSaladImage from "@/assets/tomato-salad.jpg";
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 
-//ToDo 
-//add tailwind add test 
 
 const imageSources = [
   { image: burgerImage, alt: "burgerImage" },
@@ -27,6 +25,10 @@ const imageSources = [
 
 const isLastElement = function (index: number) {
   return imageSources.length === index + 1;
+};
+
+const needToShow = function (index: number, shownImageIndex: number) {
+  return index === shownImageIndex;
 };
 
 const ImageSlider = function () {
@@ -44,16 +46,20 @@ const ImageSlider = function () {
     };
   }, []);
 
+
   return (
-    <div className={classes.imageContainer}>
-      {imageSources.map(({ image, alt } , index) => (
+    <div className="text-base relative w-full max-w-128 h-full object-cover overflow-hidden custom-box-shadow rounded-md">
+      {imageSources.map(({ image, alt }, index) => (
         <Image
           key={image.src}
           src={image.src}
           alt={alt}
-          className={`${classes.image} ${imageIndex === index ? classes.active : ''}`}
-          width={image.width}
-          height={image.height}
+          className={`transition-all duration-500 ease-out ${
+            needToShow(index, imageIndex)
+              ? "z-10 opacity-100 translateX-0 translateY-0 scale-100 rotate-0"
+              : "z-0 opacity-0  -translateY-4 scale-110 -rotate-6"
+          }`}
+          fill
         ></Image>
       ))}
     </div>
