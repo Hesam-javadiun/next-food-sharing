@@ -44,16 +44,6 @@
 
   h1 {
     font-family: "Montserrat", sans-serif;
-    color: var(--white-text-color);
-  }
-
-  h2 {
-    color: var(--white-text-color);
-    
-  }
-
-  p {
-    color: var(--white-text-color);
   }
 
   a {

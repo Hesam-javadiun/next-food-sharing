@@ -14,7 +14,7 @@ const Typography = function <C extends ElementType>({
 
   const { className, ...attributes } = restOfProps;
   return (
-    <TypographyComponent className={` ${className}`} {...attributes}>
+    <TypographyComponent  {...attributes} className={`text-white-text-color ${className}`}>
       {children}
     </TypographyComponent>
   );

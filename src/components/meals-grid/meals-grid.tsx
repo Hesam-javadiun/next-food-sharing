@@ -1,4 +1,4 @@
-import MealCard from "@/src/components/meal-card";
+import MealCard from "@/src/components/UI/meal-card";
 import type { MealData } from "@/src/lib/data-base";
 import classes from "./meals-grid.module.css";
 

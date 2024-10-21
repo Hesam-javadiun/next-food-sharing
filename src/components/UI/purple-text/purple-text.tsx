@@ -1,21 +1,24 @@
-import type { ReactNode } from "react";
+import type { ReactNode, ComponentPropsWithoutRef } from "react";
 
 type PurpleTextProps = {
   children: ReactNode;
   isBackgroundColorFilled?: boolean;
-};
+} & ComponentPropsWithoutRef<"span">;
 
 const PurpleText = function ({
   children,
   isBackgroundColorFilled = false,
+  ...spanAttributes
 }: PurpleTextProps) {
   return (
     <span
-      className={
-        isBackgroundColorFilled
-          ? "custom-purple-background "
-          : "custom-purple-text"
-      }
+      {...spanAttributes}
+      className={`
+        ${
+          isBackgroundColorFilled
+            ? "custom-purple-background "
+            : "custom-purple-text"
+        } ${spanAttributes.className}`}
     >
       {children}
     </span>
