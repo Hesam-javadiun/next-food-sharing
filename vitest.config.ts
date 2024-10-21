@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: "jsdom",
+    css:true,
   },
   resolve: {
     alias: [{ find: "@", replacement: resolve(__dirname, "./") }],

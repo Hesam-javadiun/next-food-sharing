@@ -54,6 +54,7 @@ const ImageSlider = function () {
           key={image.src}
           src={image.src}
           alt={alt}
+          data-testid={needToShow(index, imageIndex)? "shown" : 'not-shown'}
           className={`transition-all duration-500 ease-out ${
             needToShow(index, imageIndex)
               ? "z-10 opacity-100 translateX-0 translateY-0 scale-100 rotate-0"
@@ -67,3 +68,14 @@ const ImageSlider = function () {
 };
 
 export default ImageSlider;
+
+//waitFor method
+//renderHook method 
+//useEvent.type  method 
+//vi.spyOn('global', 'fetch')
+//test server what is it for 
+
+
+//https://mayashavin.com/articles/test-react-hooks-with-vitest
+//https://stackoverflow.com/questions/60137762/how-can-i-test-a-react-hooks-component-by-changing-usestate
+
