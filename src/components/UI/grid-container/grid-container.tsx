@@ -9,11 +9,13 @@ const GridContainer = function <tagType extends ElementType>(
   props: GridContainerProps<tagType>
 ) {
   const { as, children, className, containerProps } = props;
-  const Component = as ?? 'ul'
+  const Component = as ?? "ul";
   return (
     <Component
       {...containerProps}
-      className={` ${className ?? ""}`}
+      className={`grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] grid-rows-[auto] gap-20  ${
+        className ?? ""
+      }`}
     >
       {children}
     </Component>
