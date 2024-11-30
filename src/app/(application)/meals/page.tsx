@@ -1,22 +1,26 @@
-import MealsGrid from "@/src/components/meals-grid";
-import { Link, PurpleText } from "@/src/components/UI";
+
+import { Link, PurpleText, GridContainer, MealCard } from "@/src/components/UI";
 import { getMeals } from "@/src/lib/data-base";
 import { Suspense } from "react";
-import LoadingMeals from './loading-meals';
+import LoadingMeals from "./loading-meals";
 import classes from "./page.module.css";
-//todo 
-//it must use better typescript 
-//you have to add api for this next res and request
-//add tailwind and add test 
-//must extract whole logic fetching and showing meals 
+import type { MealData } from "@/src/lib/data-base";
+
 const Meals = async function () {
   const meals = await getMeals();
 
-  return <MealsGrid meals={meals} />;
+  return (
+    <GridContainer className="w-[min(100%,90rem)] m-auto p-10 list-none ">
+      {meals.map((meal: MealData) => (
+        <li key={meal.id} className="h-120">
+          <MealCard {...meal}></MealCard>
+        </li>
+      ))}
+    </GridContainer>
+  );
 };
 
 const MealsPage = function () {
-
   return (
     <>
       <header className={classes.header}>

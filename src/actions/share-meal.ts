@@ -11,7 +11,7 @@ function isInvalidText(text: unknown) {
 }
 
 const shareMeal = async (
-  pervState: any,
+  pervState: { message: string | null },
   mealFormData: FormData
 ) => {
   const meal = {
@@ -43,8 +43,8 @@ const shareMeal = async (
       resolve("dummy");
     }, 3000);
   });
-  
-  revalidatePath('/meals')
+
+  revalidatePath("/meals");
   redirect("/meals");
 };
 

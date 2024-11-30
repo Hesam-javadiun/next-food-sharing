@@ -6,5 +6,15 @@ import Typography from "./typography";
 import Button from "./button";
 import GridContainer from "./grid-container";
 import MealCard from "./meal-card";
-export { BackgroundSvg, CustomizedLink as Link, PurpleText, inputs, Typography, Button, MealCard, GridContainer };
-
+import Form from "./form";
+export {
+  BackgroundSvg,
+  CustomizedLink as Link,
+  PurpleText,
+  inputs,
+  Typography,
+  Button,
+  MealCard,
+  GridContainer,
+  Form,
+};

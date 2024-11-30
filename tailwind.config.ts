@@ -16,6 +16,8 @@ const config: Config = {
         "white-text-color":'var(--white-text-color)',
       },
       spacing: {
+        '112': '28rem',
+        '120': '30rem',
         '128': '32rem',
       }
     },
