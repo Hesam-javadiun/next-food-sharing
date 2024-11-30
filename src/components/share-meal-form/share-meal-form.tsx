@@ -15,28 +15,28 @@ const ShareMealForm = function () {
   };
 
   return (
-    <Form action={shareMeal} initialState={initialState}>
-      <div>
-        <div>
-          <inputs.input
-            name="name"
-            id="name"
-            required
-            type="text"
-            label="Your Name"
-            as="input"
-          ></inputs.input>
-        </div>
-        <div>
-          <inputs.input
-            name="email"
-            id="email"
-            required
-            type="text"
-            label="Your Email"
-            as="input"
-          ></inputs.input>
-        </div>
+    <Form
+      action={shareMeal}
+      initialState={initialState}
+      className="w-[min(50rem,100%)] m-auto flex flex-col gap-4"
+    >
+      <div className="flex justify-center align-center gap-4">
+        <inputs.input
+          name="name"
+          id="name"
+          required
+          type="text"
+          label="Your Name"
+          as="input"
+        ></inputs.input>
+        <inputs.input
+          name="email"
+          id="email"
+          required
+          type="text"
+          label="Your Email"
+          as="input"
+        ></inputs.input>
       </div>
       <inputs.input
         name="title"
@@ -59,6 +59,7 @@ const ShareMealForm = function () {
         id="instructions"
         label="Instruction"
         as="textarea"
+        rows={10}
       ></inputs.input>
       <ImageInput name={"image"} labelText="Your Image" required></ImageInput>
       <SubmitButton />

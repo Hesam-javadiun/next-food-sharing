@@ -1,5 +1,6 @@
 // import classes from "./styles.module.css";
 import type { ComponentPropsWithoutRef } from "react";
+import { Typography } from "@/src/components/UI";
 
 type InputTagProps = ComponentPropsWithoutRef<"input"> & {
   as: "input";
@@ -29,26 +30,39 @@ function isTextarea(
 }
 
 const Input = function (props: InputProps) {
+  const labelClass =
+    "text-zinc-400 all-small-caps font-bold font-sans text-[0.9em]";
+
+  const inputClass = "bg-zinc-800 border border-gray-500 border-solid rounded";
+
+  const containerClass = "flex flex-col w-full";
   if (isTextarea(props)) {
     const { as: TextareaComponent, label, ...attributes } = props;
     return (
-      <>
-        <label htmlFor={attributes.name}>{label}</label>
+      <div className={containerClass}>
+        <Typography htmlFor={attributes.name} as="label" className={labelClass}>
+          {label}
+        </Typography>
         <TextareaComponent
           {...attributes}
           name={attributes.name}
-          className={`${attributes.className}`}
+          className={`${attributes.className} ${inputClass}`}
         />
-      </>
+      </div>
     );
   }
 
   const { as: InputComponent, label, ...attributes } = props;
   return (
-    <>
-      <label htmlFor={attributes.name}>{label}</label>
-      <InputComponent {...attributes} className={`${attributes.className}`} />
-    </>
+    <div className={containerClass}>
+      <Typography htmlFor={attributes.name} as="label" className={labelClass}>
+        {label}
+      </Typography>
+      <InputComponent
+        {...attributes}
+        className={`${attributes.className} ${inputClass}`}
+      />
+    </div>
   );
 };
 

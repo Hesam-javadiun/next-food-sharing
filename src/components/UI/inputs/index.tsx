@@ -1,9 +1,7 @@
-import Input from './input';
-import Textarea from './textarea';
+import Input from "./input";
 
 const inputs = {
-    input: Input,
-    textarea: Textarea
-}
+  input: Input,
+};
 
-export default inputs
+export default inputs;
