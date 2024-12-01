@@ -62,7 +62,9 @@ const ShareMealForm = function () {
         rows={10}
       ></inputs.input>
       <ImageInput name={"image"} labelText="Your Image" required></ImageInput>
-      <SubmitButton />
+      <div className="flex justify-end">
+        <SubmitButton />
+      </div>
     </Form>
   );
 };

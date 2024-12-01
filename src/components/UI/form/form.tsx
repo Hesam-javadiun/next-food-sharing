@@ -7,8 +7,13 @@ type State = {
   message: string | null;
 };
 
+export type ActionFunctionType = (
+  pervState: State,
+  formData: FormData
+) => Promise<State>;
+
 type FormProps = {
-  action: (pervState: State, formData: FormData) => Promise<State>;
+  action: ActionFunctionType;
   initialState: State;
   children: ReactNode;
 } & Omit<ComponentPropsWithoutRef<"form">, "action">;
@@ -22,7 +27,7 @@ const Form = function ({
   const [state, formAction] = useFormState(action, initialState);
 
   return (
-    <form action={formAction} {...attributes}>
+    <form action={formAction} {...attributes} >
       {children}
       <div>{state.message && <p>{state.message}</p>}</div>
     </form>

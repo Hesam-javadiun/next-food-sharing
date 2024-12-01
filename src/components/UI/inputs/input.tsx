@@ -33,7 +33,7 @@ const Input = function (props: InputProps) {
   const labelClass =
     "text-zinc-400 all-small-caps font-bold font-sans text-[0.9em]";
 
-  const inputClass = "bg-zinc-800 border border-gray-500 border-solid rounded";
+  const inputClass = "bg-zinc-800 border border-gray-500 border-solid rounded text-zinc-100";
 
   const containerClass = "flex flex-col w-full";
   if (isTextarea(props)) {
